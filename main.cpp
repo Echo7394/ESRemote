@@ -18,7 +18,7 @@ CST816D touch(I2C_SDA, I2C_SCL, TP_RST, TP_INT);
 
 unsigned long activityTime = 0;
 String lastTemperature = ""; 
-String auth = ":199312";
+String auth = ":PASSWORDHEREAFTERTHECOLON";
 String encodedAuth = base64::encode(auth);
 String plus = "+";
 String minus = "-";
@@ -218,7 +218,7 @@ void touch_read() {
 void setup() {
   Wire.begin(I2C_SDA, I2C_SCL);
   analogWrite(TFT_BL, 255);
-  WiFi.begin("Spires", "Spires54646");
+  WiFi.begin("SSID", "PASSWORD");
   while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
     Serial.println("Connecting to WiFi...");
